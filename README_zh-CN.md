@@ -1,5 +1,7 @@
 # MixtralKit
 
+[English](/README.md) | 简体中文
+
 Mixtral 模型工具箱
 
 # 下载模型

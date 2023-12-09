@@ -1,5 +1,7 @@
 # MixtralKit
 
+English | [简体中文](README_zh-CN.md)
+
 A Toolkit for Mixtral Model
 
 # Download Models
