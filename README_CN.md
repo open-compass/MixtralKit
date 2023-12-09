@@ -1,10 +1,8 @@
 # MixtralKit
 
-A Toolkit for Mixtral Model
+Mixtral 模型工具箱
 
-# Download Models
-
-You can download the checkpoints by magnet or huggingface
+# 下载模型
 
 ## Magnet Link
 
@@ -27,7 +25,7 @@ cat consolidated.00.pth-split0 consolidated.00.pth-split1 consolidated.00.pth-sp
 ```
 
 
-# Install
+# 安装
 
 ```bash
 git clone https://github.com/open-compass/MixtralKit
@@ -38,9 +36,10 @@ pip install -e .
 ln -s path/to/checkpoints ckpts
 ```
 
-# Example
+# 示例
 
-## Text Completion 
+## 文本补全
+
 ```bash
 python tools/example.py -m ./ckpts -t ckpts/tokenizer.model --num-gpus 2
 ```
@@ -86,11 +85,12 @@ st,” and “if you know'}
 ```
 
 
-# Evaluation with OpenCompass
+# 使用OpenCompass评测
+
 
 Coming Soon....
 
-# Acknowledgement
+# 致谢
 - [llama-mistral](https://github.com/dzhulgakov/llama-mistral)
 - [llama](https://github.com/facebookresearch/llama)
 
