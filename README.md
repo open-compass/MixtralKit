@@ -4,6 +4,8 @@ English | [简体中文](README_zh-CN.md)
 
 A Toolkit for Mixtral Model
 
+> Welcome to try [OpenCompass](https://github.com/open-compass/opencompass) for model evaluation, performance of Mixtral will be updated soon.
+
 # Download Models
 
 You can download the checkpoints by magnet or huggingface

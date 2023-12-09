@@ -4,6 +4,8 @@
 
 Mixtral 模型工具箱
 
+> 欢迎试用 [OpenCompass](https://github.com/open-compass/opencompass) 进行模型评测，Mixtral模型性能将会很快更新
+
 # 下载模型
 
 ## Magnet Link
