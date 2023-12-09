@@ -1,3 +1,5 @@
+# Copyright (c) OpenMMLab. and affiliates.
+# Copyright (c) Meta Platforms, Inc. and affiliates.
 
 import math
 from dataclasses import dataclass
@@ -55,6 +57,7 @@ class MoETorchTransformerBlock(TorchTransformerBlock):
             num_shards=args.moe["num_experts"] // args.num_gpus,
             **args.moe,
         )
+
 
 class MoETorchTransformer(TorchTransformer):
     def __init__(self, params: ModelArgs):

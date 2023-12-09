@@ -1,3 +1,6 @@
+# Copyright (c) OpenMMLab. and affiliates.
+# Copyright (c) Meta Platforms, Inc. and affiliates.
+
 import torch
 from typing import Optional, Tuple
 from torch import nn

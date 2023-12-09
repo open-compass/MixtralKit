@@ -1,3 +1,6 @@
+# Copyright (c) OpenMMLab. and affiliates.
+# Copyright (c) Meta Platforms, Inc. and affiliates.
+
 import math
 import torch
 from typing import Optional, Tuple
@@ -134,7 +137,10 @@ class TorchAttention(nn.Module):
 
 
 class FairScaleAttention(TorchAttention):
-    """Multi-head attention module."""
+    """Multi-head attention module.
+    
+    Modified from 
+    """
     def __init__(self, args: ModelArgs):
         """
         Initialize the Attention module.

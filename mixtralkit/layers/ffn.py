@@ -1,3 +1,6 @@
+# Copyright (c) OpenMMLab. and affiliates.
+# Copyright (c) Meta Platforms, Inc. and affiliates.
+
 import torch
 import torch.nn.functional as F
 from torch import nn

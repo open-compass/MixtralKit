@@ -45,25 +45,18 @@ ln -s path/to/checkpoints ckpts
 ## 文本补全
 
 ```bash
-python tools/example.py -m ./ckpts -t ckpts/tokenizer.model --num-gpus 2
-```
-
-Expected Results:
-
-```bash
-===============START===============
+==============================Example START==============================
 
 [Prompt]:
-Who Are You?
+Who are you?
 
 [Response]:
-{'generation': '\n\nI often hear of my elders talking about the importance of knowing where you come from. This talk is most prevalent in the Afri
-can-American community but I imagine other groups of people could make the same claim. I have also heard “this is why the younger generation is lo
-st,” and “if you know'}
+I am a designer and theorist; a lecturer at the University of Malta and a partner in the firm Barbagallo and Baressi Design, which won the prestig
+ious Compasso d’Oro award in 2004. I was educated in industrial and interior design in the United States
 
-===============END===============
+==============================Example END==============================
 
-===============START===============
+==============================Example START==============================
 
 [Prompt]:
 1 + 1 -> 3
@@ -72,20 +65,35 @@ st,” and “if you know'}
 4 + 4 ->
 
 [Response]:
-{'generation': '9\n5 + 5 -> 11\n6 + 6 -> 13\n\n#include <iostream>\n\nusing namespace std;\n\nint addNumbers(int x, int y)\n{\n\treturn x + y;\n}\n\nint main()\n{'}
+9
+5 + 5 -> 11
+6 + 6 -> 13
 
-===============END===============
+#include <iostream>
 
+using namespace std;
 
-===============START===============
+int addNumbers(int x, int y)
+{
+        return x + y;
+}
+
+int main()
+{
+
+==============================Example END==============================
+
+==============================Example START==============================
 
 [Prompt]:
 请问你是什么模型？
 
 [Response]:
-{'generation': '“先知”姚振杰“心灵信使”“八球先生”吗？\n\nNow, this should work. We are going to change the default agent role so that now the user “agent” will be able to send emails on behalf of gmail or any other'}
+“先知”姚振杰“心灵信使”“八球先生”吗？
 
-===============END===============
+Now, this should work. We are going to change the default agent role so that now the user “agent” will be able to send emails on behalf of gmail or any other
+
+==============================Example END==============================
 ```
 
 

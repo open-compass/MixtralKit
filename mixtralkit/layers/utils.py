@@ -1,3 +1,6 @@
+# Copyright (c) OpenMMLab. and affiliates.
+# Copyright (c) Meta Platforms, Inc. and affiliates.
+
 from dataclasses import dataclass
 from typing import Optional, Tuple, Dict
 import torch

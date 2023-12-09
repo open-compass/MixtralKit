@@ -1,3 +1,5 @@
+# Copyright (c) OpenMMLab. and affiliates.
+
 import argparse
 from mixtralkit.mixtral import Mixtral
 
@@ -26,7 +28,7 @@ def main():
     max_seq_len = 1024
     max_gen_len = 64
     prompts = [
-        "Who Are You?",
+        "Who are you?",
         "1 + 1 -> 3\n"
         "2 + 2 -> 5\n"
         "3 + 3 -> 7\n"
@@ -34,7 +36,7 @@ def main():
         "请问你是什么模型？",
         ]
 
-    temperature = 1.0
+    temperature = 1.0 # for greedy decoding
     top_p = 0.9
 
     generator = Mixtral.build(
@@ -51,10 +53,10 @@ def main():
         top_p=top_p,
     )
     for prompt, result in zip(prompts, results):
-        print("="*15 + "START" + "="*15 + '\n')
+        print("="*30 + "Example START" + "="*30 + '\n')
         print("[Prompt]:\n{}\n".format(prompt))
-        print("[Response]:\n{}\n".format(result))
-        print("="*15 + "END" + "="*15 + '\n')
+        print("[Response]:\n{}\n".format(result['generation']))
+        print("="*30 + "Example END" + "="*30 + '\n')
 
 
 if __name__ == "__main__":
