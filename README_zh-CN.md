@@ -1,8 +1,18 @@
-# MixtralKit
+<div align="center">
+  
+  <font size=6>MixtralKit</font>
+  
+  Mixtral 模型工具箱
 
-[English](/README.md) | 简体中文
+  <br />
+  <br />
 
-Mixtral 模型工具箱
+  [English](/README.md) | 简体中文
+
+</div>
+
+
+
 
 > 欢迎试用 [OpenCompass](https://github.com/open-compass/opencompass) 进行模型评测，Mixtral模型性能将会很快更新。
 
@@ -127,24 +137,73 @@ int main()
 
 ==============================Example END==============================
 
-==============================Example START==============================
-
-[Prompt]:
-请问你是什么模型？
-
-[Response]:
-“先知”姚振杰“心灵信使”“八球先生”吗？
-
-Now, this should work. We are going to change the default agent role so that now the user “agent” will be able to send emails on behalf of gmail or any other
-
-==============================Example END==============================
 ```
 
 
 # 使用OpenCompass评测
 
+## 第一步: 配置OpenCompass
 
-Coming Soon....
+- 克隆和安装 OpenCompass
+
+```bash
+# assume you have already create the conda env named mixtralkit 
+conda activate mixtralkit
+
+git clone https://github.com/open-compass/opencompass opencompass
+cd opencompass
+
+pip install -e .
+```
+
+- 准备评测数据集
+
+```bash
+# Download dataset to data/ folder
+wget https://github.com/open-compass/opencompass/releases/download/0.1.8.rc1/OpenCompassData-core-20231110.zip
+unzip OpenCompassData-core-20231110.zip
+```
+
+> If you need to evaluate the **humaneval**, please go to [Installation Guide](https://opencompass.readthedocs.io/en/latest/get_started/installation.html) for more information
+
+
+## 第二步: 准备评测配置文件和数据集
+
+```bash
+cd opencompass/
+# link the example config into opencompass
+ln -s path/to/MixtralKit/playground playground
+
+# link the model weights into opencompass
+mkdir -p ./models/mixtral/
+ln -s path/to/checkpoints_folder/ ./models/mixtral/mixtral-8x7b-32kseqlen
+```
+
+现在文件结构应该如下所示
+
+```bash
+opencompass/
+├── configs
+│   ├── .....
+│   └── .....
+├── models
+│   └── mixtral
+│       └── mixtral-8x7b-32kseqlen
+├── data/
+├── playground
+│   └── eval_mixtral.py
+│── ......
+```
+
+
+## 第三步：执行评测
+
+```bash
+HF_EVALUATE_OFFLINE=1 HF_DATASETS_OFFLINE=1 TRANSFORMERS_OFFLINE=1 python run.py playground/eval_mixtral.py
+
+# 请编辑playground/eval_mixtral.py来配置希望评测的数据集
+
+```
 
 # 致谢
 - [llama-mistral](https://github.com/dzhulgakov/llama-mistral)

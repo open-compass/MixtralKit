@@ -1,12 +1,22 @@
-# MixtralKit
+<div align="center">
+  
+  <font size=6>MixtralKit</font>
+  
+        A Toolkit for Mixtral Model
 
-English | [简体中文](README_zh-CN.md)
+  <br />
+  <br />
 
-A Toolkit for Mixtral Model
+        English | [简体中文](README_zh-CN.md)
+
+</div>
 
 > Welcome to try [OpenCompass](https://github.com/open-compass/opencompass) for model evaluation, performance of Mixtral will be updated soon.
 
 > This repo is an experimental implementation of inference code, which is **not officially released** by Mistral AI.
+
+# Performance
+
 
 # Prepare Model Weights
 
@@ -72,12 +82,15 @@ Official MD5
 # Install
 
 ```bash
+conda create --name mixtralkit python=3.10 pytorch torchvision pytorch-cuda -c nvidia -c pytorch -y
+conda activate mixtralkit
+
 git clone https://github.com/open-compass/MixtralKit
 cd MixtralKit/
 pip install -r requirements.txt
 pip install -e .
 
-ln -s path/to/checkpoints ckpts
+ln -s path/to/checkpoints_folder/ ckpts
 ```
 
 # Example
@@ -128,23 +141,71 @@ int main()
 
 ==============================Example END==============================
 
-==============================Example START==============================
-
-[Prompt]:
-请问你是什么模型？
-
-[Response]:
-“先知”姚振杰“心灵信使”“八球先生”吗？
-
-Now, this should work. We are going to change the default agent role so that now the user “agent” will be able to send emails on behalf of gmail or any other
-
-==============================Example END==============================
 ```
 
 
 # Evaluation with OpenCompass
 
-Coming Soon....
+## Step-1: Setup OpenCompass
+
+- Clone and Install OpenCompass
+
+```bash
+# assume you have already create the conda env named mixtralkit 
+conda activate mixtralkit
+
+git clone https://github.com/open-compass/opencompass opencompass
+cd opencompass
+
+pip install -e .
+```
+
+- Prepare Evaluation Dataset
+
+```bash
+# Download dataset to data/ folder
+wget https://github.com/open-compass/opencompass/releases/download/0.1.8.rc1/OpenCompassData-core-20231110.zip
+unzip OpenCompassData-core-20231110.zip
+```
+
+> If you need to evaluate the **humaneval**, please go to [Installation Guide](https://opencompass.readthedocs.io/en/latest/get_started/installation.html) for more information
+
+
+## Step-2: Pre-pare evaluation config and weights
+
+```bash
+cd opencompass/
+# link the example config into opencompass
+ln -s path/to/MixtralKit/playground playground
+
+# link the model weights into opencompass
+mkdir -p ./models/mixtral/
+ln -s path/to/checkpoints_folder/ ./models/mixtral/mixtral-8x7b-32kseqlen
+```
+
+Currently, you should have the files structure like:
+
+```bash
+
+opencompass/
+├── configs
+│   ├── .....
+│   └── .....
+├── models
+│   └── mixtral
+│       └── mixtral-8x7b-32kseqlen
+├── data/
+├── playground
+│   └── eval_mixtral.py
+│── ......
+```
+
+
+## Step-3: Run evaluation experiments
+
+```bash
+HF_EVALUATE_OFFLINE=1 HF_DATASETS_OFFLINE=1 TRANSFORMERS_OFFLINE=1 python run.py playground/eval_mixtral.py
+```
 
 # Acknowledgement
 - [llama-mistral](https://github.com/dzhulgakov/llama-mistral)
