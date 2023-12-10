@@ -6,6 +6,8 @@ A Toolkit for Mixtral Model
 
 > Welcome to try [OpenCompass](https://github.com/open-compass/opencompass) for model evaluation, performance of Mixtral will be updated soon.
 
+> This repo is an experimental implementation of inference code, which is **not officially released** by Mistral AI.
+
 # Download Models
 
 You can download the checkpoints by magnet or huggingface

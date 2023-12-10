@@ -4,7 +4,10 @@
 
 Mixtral 模型工具箱
 
-> 欢迎试用 [OpenCompass](https://github.com/open-compass/opencompass) 进行模型评测，Mixtral模型性能将会很快更新
+> 欢迎试用 [OpenCompass](https://github.com/open-compass/opencompass) 进行模型评测，Mixtral模型性能将会很快更新。
+
+> 本仓库仅提供实验性质的推理代码，非Mistral AI官方提供的示例代码。
+
 
 # 下载模型
 
