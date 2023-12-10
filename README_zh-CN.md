@@ -36,7 +36,21 @@
 
 # 性能
 
-马上更新
+
+```markdown
+dataset                                 version    metric         mode    mixtral-8x7b-32k
+--------------------------------------  ---------  -------------  ------  ------------------
+mmlu                                    -          naive_average     ppl     71.34
+ARC-c                                   2ef631     accuracy          ppl     85.08
+ARC-e                                   2ef631     accuracy          ppl     91.36
+triviaqa                                2121ce     score             gen     66.05
+hellaswag                               a6e128     accuracy          ppl     82.01
+piqa                                    0cfff2     accuracy          ppl     82.86
+siqa                                    e8d8c5     accuracy          ppl     64.28
+math                                    265cce     accuracy          gen     22.74
+gsm8k                                   1d7fe4     accuracy          gen     65.66
+openai_humaneval                        a82cae     humaneval_pass@1  gen     32.32
+```
 
 # 准备模型权重
 
