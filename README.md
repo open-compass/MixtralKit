@@ -15,6 +15,22 @@
 
 > This repo is an experimental implementation of inference code, which is **not officially released** by Mistral AI.
 
+
+- [Performance](#performance)
+- [Prepare Model Weights](#prepare-model-weights)
+  - [Download Weights](#download-weights)
+  - [Merge Files](#merge-filesonly-for-hf)
+  - [MD5 Validation](#md5-validation)
+- [Install](#install)
+- [Inference](#inference)
+  - [Text Completion](#text-completion)
+- [Evaluation with OpenCompass](#evaluation-with-opencompass)
+  - [Step-1: Setup OpenCompass](#step-1-setup-opencompass)
+  - [Step-2: Pre-pare evaluation config and weights](#step-2-pre-pare-evaluation-config-and-weights)
+  - [Step-3: Run evaluation experiments](#step-3-run-evaluation-experiments)
+- [Acknowledgement](#acknowledgement)
+
+
 # Performance
 
 To Be Updated
@@ -95,7 +111,7 @@ pip install -e .
 ln -s path/to/checkpoints_folder/ ckpts
 ```
 
-# Example
+# Inference
 
 ## Text Completion 
 ```bash
