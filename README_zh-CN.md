@@ -1,6 +1,6 @@
 <div align="center">
   
-  <font size=6>MixtralKit</font>
+  # MixtralKit
   
   Mixtral 模型工具箱
 

@@ -1,6 +1,6 @@
 <div align="center">
   
-  <font size=6>MixtralKit</font>
+  # MixtralKit
   
   A Toolkit for Mixtral Model
 
