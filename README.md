@@ -33,20 +33,56 @@
 
 # Performance
 
+## Comparison with Other Models
+
+- All data generated from [OpenCompass](https://github.com/open-compass/opencompass)
+
+> Performances generated from different evaluation toolkits are different due to the prompts, settings and implementation details.
+
+
+| Datasets        | Mode | Mistral-7B-v0.1 | Mixtral-8x7B |  Llama2-70B | DeepSeek-67B-Base | Qwen-72B | 
+|-----------------|------|-----------------|--------------|-------------|-------------------|----------|
+| MMLU            | PPL  | 64.1            | 71.3         | 69.7        | 71.9              | 77.3     |
+| BIG-Bench-Hard  | GEN  | 56.7            | 67.1         | 64.9        | 71.7              | 63.7     |
+| GSM-8K          | GEN  | 47.5            | 65.7         | 63.4        | 66.5              | 77.6     |
+| MATH            | GEN  | 11.3            | 22.7         | 12.0        | 15.9              | 35.1     |
+| HumanEval       | GEN  | 27.4            | 32.3         | 26.2        | 40.9              | 33.5     |
+| MBPP            | GEN  | 38.6            | 47.8         | 39.6        | 55.2              | 51.6     |
+| ARC-c           | PPL  | 74.2            | 85.1         | 78.3        | 86.8              | 92.2     |
+| ARC-e           | PPL  | 83.6            | 91.4         | 85.9        | 93.7              | 96.8     |
+| CommonSenseQA   | PPL  | 67.4            | 70.4         | 78.3        | 70.7              | 73.9     |
+| NaturalQuestion | GEN  | 24.6            | 29.4         | 34.2        | 29.9              | 27.1     |
+| TrivialQA       | GEN  | 56.5            | 66.1         | 70.7        | 67.4              | 60.1     |
+| HellaSwag       | PPL  | 78.9            | 82.0         | 82.3        | 82.3              | 85.4     |
+| PIQA            | PPL  | 81.6            | 82.9         | 82.5        | 82.6              | 85.2     |
+| SIQA            | GEN  | 60.2            | 64.3         | 64.8        | 62.6              | 78.2     |
+
+
+## Performance Mixtral-8x7b
+
 ```markdown
 dataset                                 version    metric         mode    mixtral-8x7b-32k
 --------------------------------------  ---------  -------------  ------  ------------------
 mmlu                                    -          naive_average     ppl     71.34
 ARC-c                                   2ef631     accuracy          ppl     85.08
 ARC-e                                   2ef631     accuracy          ppl     91.36
+BoolQ                                   314797     accuracy          ppl     86.27
+commonsense_qa                          5545e2     accuracy          ppl     70.43
 triviaqa                                2121ce     score             gen     66.05
+nq                                      2121ce     score             gen     29.36
+openbookqa_fact                         6aac9e     accuracy          ppl     85.40
+AX_b                                    6db806     accuracy          ppl     48.28
+AX_g                                    66caf3     accuracy          ppl     48.60
 hellaswag                               a6e128     accuracy          ppl     82.01
 piqa                                    0cfff2     accuracy          ppl     82.86
 siqa                                    e8d8c5     accuracy          ppl     64.28
 math                                    265cce     accuracy          gen     22.74
 gsm8k                                   1d7fe4     accuracy          gen     65.66
 openai_humaneval                        a82cae     humaneval_pass@1  gen     32.32
+mbpp                                    1e1056     score             gen     47.80
+bbh                                     -          naive_average     gen     67.14
 ```
+
 
 # Prepare Model Weights
 
