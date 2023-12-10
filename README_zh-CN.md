@@ -9,28 +9,69 @@ Mixtral 模型工具箱
 > 本仓库仅提供实验性质的推理代码，非Mistral AI官方提供的示例代码。
 
 
-# 下载模型
+# 准备模型权重
 
-## Magnet Link
+## 下载模型权重
 
-Please use this link to download the original files
-```bash
-magnet:?xt=urn:btih:5546272da9065eddeb6fcd7ffddeef5b75be79a7&dn=mixtral-8x7b-32kseqlen&tr=udp%3A%2F%http://2Fopentracker.i2p.rocks%3A6969%2Fannounce&tr=http%3A%2F%http://2Ftracker.openbittorrent.com%3A80%2Fannounce
-```
+你可以通过使用磁力链接(迅雷)或使用HuggingFace进行下载
 
-## [HuggingFace](https://huggingface.co/someone13574/mixtral-8x7b-32kseqlen)
+### HuggingFace
+
+社区用户提供的HF文件切分版：[HuggingFace仓库](https://huggingface.co/someone13574/mixtral-8x7b-32kseqlen)
 
 ```bash
 # Download the huggingface
 git lfs install
 git clone https://huggingface.co/someone13574/mixtral-8x7b-32kseqlen
 
+```
+> 用户如果无法访问huggingface, 可以使用[国内镜像](https://hf-mirror.com/someone13574/mixtral-8x7b-32kseqlen)
+
+```bash
+# Download the huggingface
+git lfs install
+git clone https://hf-mirror.com/someone13574/mixtral-8x7b-32kseqlen
+```
+
+### Magnet Link
+
+Please use this link to download the original files
+```bash
+magnet:?xt=urn:btih:5546272da9065eddeb6fcd7ffddeef5b75be79a7&dn=mixtral-8x7b-32kseqlen&tr=udp%3A%2F%http://2Fopentracker.i2p.rocks%3A6969%2Fannounce&tr=http%3A%2F%http://2Ftracker.openbittorrent.com%3A80%2Fannounce
+```
+
+## 文件拼接(仅HF格式需要)
+
+```bash
 cd mixtral-8x7b-32kseqlen/
 
 # Merge the checkpoints
 cat consolidated.00.pth-split0 consolidated.00.pth-split1 consolidated.00.pth-split2 consolidated.00.pth-split3 consolidated.00.pth-split4 consolidated.00.pth-split5 consolidated.00.pth-split6 consolidated.00.pth-split7 consolidated.00.pth-split8 consolidated.00.pth-split9 consolidated.00.pth-split10 > consolidated.00.pth
 ```
 
+
+## 文件校验
+
+请在使用文件前，进行md5校验，保证文件在下载过程中并未损坏
+```bash
+md5sum consolidated.00.pth
+md5sum tokenizer.model
+
+# 如果完成校验，可删除slit文件
+rm consolidated.00.pth-split*
+```
+
+官方校验值
+
+```bash
+ ╓────────────────────────────────────────────────────────────────────────────╖
+ ║                                                                            ║
+ ║                               ·· md5sum ··                                 ║
+ ║                                                                            ║
+ ║        1faa9bc9b20fcfe81fcd4eb7166a79e6  consolidated.00.pth               ║
+ ║        37974873eb68a7ab30c4912fc36264ae  tokenizer.model                   ║
+ ╙────────────────────────────────────────────────────────────────────────────╜
+```
 
 # 安装
 
