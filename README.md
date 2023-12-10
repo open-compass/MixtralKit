@@ -2,12 +2,12 @@
   
   <font size=6>MixtralKit</font>
   
-        A Toolkit for Mixtral Model
+  A Toolkit for Mixtral Model
 
   <br />
   <br />
 
-        English | [简体中文](README_zh-CN.md)
+  English | [简体中文](README_zh-CN.md)
 
 </div>
 
