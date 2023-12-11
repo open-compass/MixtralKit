@@ -20,6 +20,10 @@
 
 
 - [性能](#性能)
+- [相关项目](#相关项目)
+  - [评测]()
+  - [微调](#微调)
+  - [部署](#部署)
 - [准备模型权重](#准备模型权重)
   - [下载模型权重](#下载模型权重)
   - [文件拼接](#文件拼接仅hf格式需要)
@@ -88,9 +92,12 @@ bbh                                     -          naive_average     gen     67.
 ```
 # 相关项目
 
+## 评测
+- [x] 评测工具 [OpenCompass](https://github.com/open-compass/opencompass)
+
 ## 微调
 
-- [x] Finetuned Mixtral-8x7B from DiscoResearch: [DiscoLM-mixtral-8x7b-v2](https://huggingface.co/DiscoResearch/DiscoLM-mixtral-8x7b-v2)
+- [x] 微调模型Mixtral-8x7B(DiscoResearch): [DiscoLM-mixtral-8x7b-v2](https://huggingface.co/DiscoResearch/DiscoLM-mixtral-8x7b-v2)
 
 ## 部署
 
