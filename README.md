@@ -30,7 +30,7 @@
 > </b>
 > <br>
 > <b>
-> This repo is an experimental implementation of inference code, which is **not officially released** by Mistral AI.
+> 🙏 This repo is an **experimental** implementation of inference code.
 > </b>
 > </div>
 
