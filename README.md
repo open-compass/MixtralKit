@@ -83,6 +83,26 @@ mbpp                                    1e1056     score             gen     47.
 bbh                                     -          naive_average     gen     67.14
 ```
 
+# Related Projects
+
+## Fine-tuning
+
+- [x] Finetuned Mixtral-8x7B from DiscoResearch: [DiscoLM-mixtral-8x7b-v2](https://huggingface.co/DiscoResearch/DiscoLM-mixtral-8x7b-v2)
+
+## Deployment
+
+TBD
+
+
+# Model Architecture
+
+>  The Mixtral-8x7B-32K MoE model is mainly composed of 32 identical MoEtransformer blocks. The main difference between the MoEtransformer block and the ordinary transformer block is that the FFN layer is replaced by the **MoE FFN** layer. In the MoE FFN layer, the tensor first goes through a gate layer to calculate the scores of each expert, and then selects the top-k experts from the 8 experts based on the expert scores. The tensor is aggregated through the outputs of the top-k experts, thereby obtaining the final output of the MoE FFN layer. Each expert consists of 3 linear layers. It is worth noting that all Norm Layers of Mixtral MoE also use RMSNorm, which is the same as LLama. In the attention layer, the QKV matrix in the Mixtral MoE has a Q matrix shape of (4096,4096) and K and V matrix shapes of (4096,1024).
+
+We plot the architecture as the following:
+
+<div align="center">
+  <img src="https://github.com/open-compass/MixtralKit/assets/7881589/40141799-7c74-4fd8-8228-cf0f2c131482" width="600px"/>
+</div>
 
 # Prepare Model Weights
 
