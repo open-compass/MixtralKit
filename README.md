@@ -17,6 +17,11 @@
 
 
 - [Performance](#performance)
+- [Related Projects](#related-projects)
+  - [Evaluation](#evaluation)
+  - [Fine-tuning](#fine-tuning)
+  - [Deployment](#deployment)
+- [Model Architecture](#model-architecture)
 - [Prepare Model Weights](#prepare-model-weights)
   - [Download Weights](#download-weights)
   - [Merge Files](#merge-filesonly-for-hf)
@@ -84,6 +89,10 @@ bbh                                     -          naive_average     gen     67.
 ```
 
 # Related Projects
+
+## Evaluation
+
+- [x] Evaluation Toolkit: [OpenCompass](https://github.com/open-compass/opencompass)
 
 ## Fine-tuning
 
