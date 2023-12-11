@@ -110,7 +110,7 @@ TBD
 模型结构图如下:
 
 <div align="center">
-  <img src="https://github.com/open-compass/MixtralKit/assets/7881589/40141799-7c74-4fd8-8228-cf0f2c131482" width="600px"/>
+  <img src="https://github.com/open-compass/MixtralKit/assets/7881589/0bd59661-4799-4e39-8a92-95fd559679e9" width="800px"/>
 </div>
 
 
