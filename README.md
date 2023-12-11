@@ -4,9 +4,9 @@
   A Toolkit for Mixtral Model
 
   <a href="#📊-performance">📊Performance </a> •
-  <a href="#✨-community-projects">✨Community Projects </a> •
-  <a href="#📖-model-architecture">📖Model Architecture </a> •
-  <a href="#📂-model-weights">📂 Model Weights </a> •
+  <a href="#✨-community-projects">✨Projects </a> •
+  <a href="#📖-model-architecture">📖Architecture </a> •
+  <a href="#📂-model-weights">📂Weights </a> •
   <a href="#🔨-install"> 🔨 Install </a> •
   <a href="#🚀-inference">🚀Inference </a> •
   <a href="#🤝-acknowledgement">🤝 Acknowledgement </a>
@@ -27,6 +27,9 @@
 > <br>
 > <b>
 > 🤗 Request for update your mixtral-related projects is open</a>!
+> </b>
+> <br>
+> <b>
 > This repo is an experimental implementation of inference code, which is **not officially released** by Mistral AI.
 > </b>
 > </div>
