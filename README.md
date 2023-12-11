@@ -100,6 +100,9 @@ TBD
 
 We plot the architecture as the following:
 
+<div align="center">
+  <img src="https://github.com/open-compass/MixtralKit/assets/7881589/40141799-7c74-4fd8-8228-cf0f2c131482" width="600px"/>
+</div>
 
 # Prepare Model Weights
 
