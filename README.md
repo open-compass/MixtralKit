@@ -96,6 +96,7 @@ bbh                                     -          naive_average     gen     67.
 
 ## Fine-tuning
 
+- [x] Finetuning script (Full-parameters or QLoRA) from [XTuner](https://github.com/InternLM/xtuner/tree/main/xtuner/configs/mixtral) 
 - [x] Finetuned Mixtral-8x7B from DiscoResearch: [DiscoLM-mixtral-8x7b-v2](https://huggingface.co/DiscoResearch/DiscoLM-mixtral-8x7b-v2)
 
 ## Deployment
