@@ -83,6 +83,15 @@ mbpp                                    1e1056     score             gen     47.
 bbh                                     -          naive_average     gen     67.14
 ```
 
+# Related Projects
+
+## Fine-tuning
+
+- [x] Finetuned Mixtral-8x7B from DiscoResearch: [DiscoLM-mixtral-8x7b-v2](https://huggingface.co/DiscoResearch/DiscoLM-mixtral-8x7b-v2)
+
+## Deployment
+
+TBD
 
 # Prepare Model Weights
 

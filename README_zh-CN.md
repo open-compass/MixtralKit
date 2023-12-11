@@ -86,6 +86,15 @@ openai_humaneval                        a82cae     humaneval_pass@1  gen     32.
 mbpp                                    1e1056     score             gen     47.80
 bbh                                     -          naive_average     gen     67.14
 ```
+# Related Projects
+
+## Fine-tuning
+
+- [x] Finetuned Mixtral-8x7B from DiscoResearch: [DiscoLM-mixtral-8x7b-v2](https://huggingface.co/DiscoResearch/DiscoLM-mixtral-8x7b-v2)
+
+## Deployment
+
+TBD
 
 # 准备模型权重
 
