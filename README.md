@@ -37,22 +37,6 @@
 
 
 
-- [Performance](#📊-performance)
-- [Related Projects](#related-projects)
-  - [Evaluation](#evaluation)
-  - [Fine-tuning](#fine-tuning)
-  - [Deployment](#deployment)
-- [Model Architecture](#model-architecture)
-- [Prepare Model Weights](#prepare-model-weights)
-  - [Download Weights](#download-weights)
-  - [Merge Files](#merge-filesonly-for-hf)
-  - [MD5 Validation](#md5-validation)
-- [Install](#install)
-- [Inference](#inference)
-  - [Text Completion](#text-completion)
-- [Evaluation with OpenCompass](#evaluation-with-opencompass)
-- [Acknowledgement](#acknowledgement)
-
 
 # 📊 Performance
 
