@@ -21,27 +21,22 @@
 </div>
 
 
+> [!重要]
+> <div align="center">
+> <b>
+> 📢欢迎试用 <a href="https://github.com/open-compass/opencompass">OpenCompass</a> 进行模型评测 📢
+> </b>
+> <br>
+> <b>
+> 🤗 欢迎将你的Mixtral相关的项目添加到README </a>!
+> </b>
+> <br>
+> <b>
+> 🙏 本仓库仅提供**实验性质**的推理代码
+> </b>
+> </div>
 
-> 欢迎试用 [OpenCompass](https://github.com/open-compass/opencompass) 进行模型评测，Mixtral模型性能将会很快更新。
 
-> 本仓库仅提供实验性质的推理代码，非Mistral AI官方提供的示例代码。
-
-
-- [性能](#性能)
-- [相关项目](#相关项目)
-  - [评测]()
-  - [微调](#微调)
-  - [部署](#部署)
-- [模型介绍](#模型介绍)
-- [准备模型权重](#准备模型权重)
-  - [下载模型权重](#下载模型权重)
-  - [文件拼接](#文件拼接仅hf格式需要)
-  - [文件校验](#文件校验)
-- [安装](#安装)
-- [推理](#推理)
-  - [文本补全](#文本补全)
-- [使用OpenCompass评测](#使用opencompass评测)
-- [致谢](#致谢)
 
 
 # 📊 性能
