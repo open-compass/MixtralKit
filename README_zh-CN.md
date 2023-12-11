@@ -96,7 +96,7 @@ bbh                                     -          naive_average     gen     67.
 - [x] 评测工具 [OpenCompass](https://github.com/open-compass/opencompass)
 
 ## 微调
-
+- [x] 使用XTuner微调Mixtral-8x7B 方案(全参数/QLoRA): [XTuner](https://github.com/InternLM/xtuner/tree/main/xtuner/configs/mixtral) 
 - [x] 微调模型Mixtral-8x7B(DiscoResearch): [DiscoLM-mixtral-8x7b-v2](https://huggingface.co/DiscoResearch/DiscoLM-mixtral-8x7b-v2)
 
 ## 部署
@@ -110,7 +110,7 @@ TBD
 模型结构图如下:
 
 <div align="center">
-  <img src="https://github.com/open-compass/MixtralKit/assets/7881589/40141799-7c74-4fd8-8228-cf0f2c131482" width="600px"/>
+  <img src="https://github.com/open-compass/MixtralKit/assets/7881589/0bd59661-4799-4e39-8a92-95fd559679e9" width="800px"/>
 </div>
 
 

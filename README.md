@@ -96,6 +96,7 @@ bbh                                     -          naive_average     gen     67.
 
 ## Fine-tuning
 
+- [x] Finetuning script (Full-parameters or QLoRA) from [XTuner](https://github.com/InternLM/xtuner/tree/main/xtuner/configs/mixtral) 
 - [x] Finetuned Mixtral-8x7B from DiscoResearch: [DiscoLM-mixtral-8x7b-v2](https://huggingface.co/DiscoResearch/DiscoLM-mixtral-8x7b-v2)
 
 ## Deployment
@@ -110,7 +111,7 @@ TBD
 We plot the architecture as the following:
 
 <div align="center">
-  <img src="https://github.com/open-compass/MixtralKit/assets/7881589/40141799-7c74-4fd8-8228-cf0f2c131482" width="600px"/>
+  <img src="https://github.com/open-compass/MixtralKit/assets/7881589/0bd59661-4799-4e39-8a92-95fd559679e9" width="800px"/>
 </div>
 
 # Prepare Model Weights
