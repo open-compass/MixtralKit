@@ -51,8 +51,8 @@
 
 
 | Datasets        | Mode | Mistral-7B-v0.1 | Mixtral-8x7B(MoE) |  Llama2-70B | DeepSeek-67B-Base | Qwen-72B | 
-| Active Params   |  -   |      7B         |     12B      |     70B     |       67B         |   72B    |
 |-----------------|------|-----------------|--------------|-------------|-------------------|----------|
+| Active Params   |  -   |      7B         |     12B      |     70B     |       67B         |   72B    |
 | MMLU            | PPL  | 64.1            | 71.3         | 69.7        | 71.9              | 77.3     |
 | BIG-Bench-Hard  | GEN  | 56.7            | 67.1         | 64.9        | 71.7              | 63.7     |
 | GSM-8K          | GEN  | 47.5            | 65.7         | 63.4        | 66.5              | 77.6     |
