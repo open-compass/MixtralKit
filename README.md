@@ -1,6 +1,8 @@
 <div align="center">
+  <img src="https://github.com/open-compass/MixtralKit/assets/7881589/149f8930-3a34-49b6-b27d-79dc192aeac7" width="500px"/>
   
   # MixtralKit
+
   A Toolkit for Mixtral Model
 
   <a href="#📊-performance">📊Performance </a> •
