@@ -9,7 +9,6 @@ import torch.nn.functional as F
 from .utils import ModelArgs, repeat_kv
 from .position_embeding import apply_rotary_emb
 
-
         
 class TorchAttention(nn.Module):
     """Multi-head attention module."""
