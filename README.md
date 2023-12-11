@@ -22,7 +22,7 @@
 > [!Important]
 > <div align="center">
 > <b>
-> 📢 Welcome to try [OpenCompass](https://github.com/open-compass/opencompass) for model evaluation 📢
+> 📢 Welcome to try <a href="https://github.com/open-compass/opencompass">OpenCompass</a> for model evaluation 📢
 > </b>
 > <br>
 > <b>
