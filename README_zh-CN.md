@@ -1,8 +1,17 @@
 <div align="center">
-  
+  <img src="https://github.com/open-compass/MixtralKit/assets/7881589/149f8930-3a34-49b6-b27d-79dc192aeac7" width="500px"/>
+
   # MixtralKit
   
   Mixtral 模型工具箱
+
+  <a href="#📊-性能">📊性能 </a> •
+  <a href="#✨-社区项目">✨社区项目 </a> •
+  <a href="#📖-模型架构">📖模型架构 </a> •
+  <a href="#📂-模型权重">📂模型权重 </a> •
+  <a href="#🔨-安装">🔨安装 </a> •
+  <a href="#🚀-推理">🚀推理 </a> •
+  <a href="#🤝-致谢">🤝致谢 </a>
 
   <br />
   <br />
@@ -12,33 +21,25 @@
 </div>
 
 
+> [!重要]
+> <div align="center">
+> <b>
+> 📢欢迎试用 <a href="https://github.com/open-compass/opencompass">OpenCompass</a> 进行模型评测 📢
+> </b>
+> <br>
+> <b>
+> 🤗 欢迎将你的Mixtral相关的项目添加到README </a>!
+> </b>
+> <br>
+> <b>
+> 🙏 本仓库仅提供**实验性质**的推理代码
+> </b>
+> </div>
 
 
-> 欢迎试用 [OpenCompass](https://github.com/open-compass/opencompass) 进行模型评测，Mixtral模型性能将会很快更新。
-
-> 本仓库仅提供实验性质的推理代码，非Mistral AI官方提供的示例代码。
 
 
-- [性能](#性能)
-- [相关项目](#相关项目)
-  - [评测]()
-  - [微调](#微调)
-  - [部署](#部署)
-- [准备模型权重](#准备模型权重)
-  - [下载模型权重](#下载模型权重)
-  - [文件拼接](#文件拼接仅hf格式需要)
-  - [文件校验](#文件校验)
-- [安装](#安装)
-- [推理](#推理)
-  - [文本补全](#文本补全)
-- [使用OpenCompass评测](#使用opencompass评测)
-  - [第一步: 配置OpenCompass](#第一步-配置opencompass)
-  - [第二步: 准备评测配置文件和数据集](#第二步-准备评测配置文件和数据集)
-  - [第三步：执行评测](#第三步执行评测)
-- [致谢](#致谢)
-
-
-# 性能
+# 📊 性能
 
 
 - 所有数据来源自[OpenCompass](https://github.com/open-compass/opencompass)
@@ -48,8 +49,9 @@
 ## 性能对比
 
 
-| Datasets        | Mode | Mistral-7B-v0.1 | Mixtral-8x7B |  Llama2-70B | DeepSeek-67B-Base | Qwen-72B | 
+| 数据集        | Mode | Mistral-7B-v0.1 | Mixtral-8x7B(MoE) |  Llama2-70B | DeepSeek-67B-Base | Qwen-72B | 
 |-----------------|------|-----------------|--------------|-------------|-------------------|----------|
+| 激活参数   |  -   |      7B         |     12B      |     70B     |       67B         |   72B    |
 | MMLU            | PPL  | 64.1            | 71.3         | 69.7        | 71.9              | 77.3     |
 | BIG-Bench-Hard  | GEN  | 56.7            | 67.1         | 64.9        | 71.7              | 63.7     |
 | GSM-8K          | GEN  | 47.5            | 65.7         | 63.4        | 66.5              | 77.6     |
@@ -90,7 +92,7 @@ openai_humaneval                        a82cae     humaneval_pass@1  gen     32.
 mbpp                                    1e1056     score             gen     47.80
 bbh                                     -          naive_average     gen     67.14
 ```
-# 相关项目
+# ✨ 社区项目
 
 ## 评测
 - [x] 评测工具 [OpenCompass](https://github.com/open-compass/opencompass)
@@ -103,7 +105,7 @@ bbh                                     -          naive_average     gen     67.
 
 TBD
 
-# 模型介绍
+# 📖 模型架构
 
 > Mixtral-8x7B-32K MoE模型主要由32个相同的MoEtransformer block组成。MoEtransformer block与普通的transformer block的最大差别在于其FFN层替换为了**MoE FFN**层。在MoE FFN层，tensor首先会经过一个gate layer计算每个expert的得分，并根据expert得分从8个expert中挑出top-k个expert，将tensor经过这top-k个expert的输出后聚合起来，从而得到MoE FFN层的最终输出，其中的每个expert由3个Linear层组成。值得注意的是，mixtral MoE的所有Norm Layer也采用了和LLama一样的RMSNorm，而在attention layer中，mixtral MoE的QKV矩阵中的Q矩阵shaoe为(4096,4096)，K和V矩阵shape则为(4096,1024)。
 
@@ -114,13 +116,18 @@ TBD
 </div>
 
 
-# 准备模型权重
+# 📂 模型权重
 
-## 下载模型权重
+## HuggingFace 格式
+
+- [官方基座模型 Mistral-7B-v0.1](https://huggingface.co/mistralai/Mistral-7B-v0.1)
+- [官方对话模型 Mixtral-8x7B-Instruct-v0.1](https://huggingface.co/mistralai/Mixtral-8x7B-Instruct-v0.1)
+
+## 原生格式
 
 你可以通过使用磁力链接(迅雷)或使用HuggingFace进行下载
 
-### HuggingFace
+### 使用HF下载
 
 社区用户提供的HF文件切分版：[HuggingFace仓库](https://huggingface.co/someone13574/mixtral-8x7b-32kseqlen)
 
@@ -136,26 +143,22 @@ git clone https://huggingface.co/someone13574/mixtral-8x7b-32kseqlen
 # Download the huggingface
 git lfs install
 git clone https://hf-mirror.com/someone13574/mixtral-8x7b-32kseqlen
-```
 
-### Magnet Link
-
-Please use this link to download the original files
-```bash
-magnet:?xt=urn:btih:5546272da9065eddeb6fcd7ffddeef5b75be79a7&dn=mixtral-8x7b-32kseqlen&tr=udp%3A%2F%http://2Fopentracker.i2p.rocks%3A6969%2Fannounce&tr=http%3A%2F%http://2Ftracker.openbittorrent.com%3A80%2Fannounce
-```
-
-## 文件拼接(仅HF格式需要)
-
-```bash
+# Merge Files(Only for HF)
 cd mixtral-8x7b-32kseqlen/
 
 # Merge the checkpoints
 cat consolidated.00.pth-split0 consolidated.00.pth-split1 consolidated.00.pth-split2 consolidated.00.pth-split3 consolidated.00.pth-split4 consolidated.00.pth-split5 consolidated.00.pth-split6 consolidated.00.pth-split7 consolidated.00.pth-split8 consolidated.00.pth-split9 consolidated.00.pth-split10 > consolidated.00.pth
 ```
 
+### 使用磁力链下载
 
-## 文件校验
+```bash
+magnet:?xt=urn:btih:5546272da9065eddeb6fcd7ffddeef5b75be79a7&dn=mixtral-8x7b-32kseqlen&tr=udp%3A%2F%http://2Fopentracker.i2p.rocks%3A6969%2Fannounce&tr=http%3A%2F%http://2Ftracker.openbittorrent.com%3A80%2Fannounce
+```
+
+
+### 文件校验
 
 请在使用文件前，进行md5校验，保证文件在下载过程中并未损坏
 ```bash
@@ -178,7 +181,7 @@ rm consolidated.00.pth-split*
  ╙────────────────────────────────────────────────────────────────────────────╜
 ```
 
-# 安装
+# 🔨 安装
 
 ```bash
 git clone https://github.com/open-compass/MixtralKit
@@ -189,7 +192,7 @@ pip install -e .
 ln -s path/to/checkpoints ckpts
 ```
 
-# 推理
+# 🚀 推理
 
 ## 文本补全
 
@@ -235,7 +238,7 @@ int main()
 ```
 
 
-# 使用OpenCompass评测
+# 🏗️ 评测
 
 ## 第一步: 配置OpenCompass
 
@@ -300,7 +303,18 @@ HF_EVALUATE_OFFLINE=1 HF_DATASETS_OFFLINE=1 TRANSFORMERS_OFFLINE=1 python run.py
 
 ```
 
-# 致谢
+# 🤝 致谢
 - [llama-mistral](https://github.com/dzhulgakov/llama-mistral)
 - [llama](https://github.com/facebookresearch/llama)
 
+# 🖊️ 引用
+
+
+```latex
+@misc{2023opencompass,
+    title={OpenCompass: A Universal Evaluation Platform for Foundation Models},
+    author={OpenCompass Contributors},
+    howpublished = {\url{https://github.com/open-compass/opencompass}},
+    year={2023}
+}
+```

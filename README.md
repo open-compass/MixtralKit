@@ -1,8 +1,17 @@
 <div align="center">
+  <img src="https://github.com/open-compass/MixtralKit/assets/7881589/149f8930-3a34-49b6-b27d-79dc192aeac7" width="500px"/>
   
   # MixtralKit
-  
+
   A Toolkit for Mixtral Model
+
+  <a href="#📊-performance">📊Performance </a> •
+  <a href="#✨-community-projects">✨Projects </a> •
+  <a href="#📖-model-architecture">📖Architecture </a> •
+  <a href="#📂-model-weights">📂Weights </a> •
+  <a href="#🔨-install"> 🔨 Install </a> •
+  <a href="#🚀-inference">🚀Inference </a> •
+  <a href="#🤝-acknowledgement">🤝 Acknowledgement </a>
 
   <br />
   <br />
@@ -11,32 +20,27 @@
 
 </div>
 
-> Welcome to try [OpenCompass](https://github.com/open-compass/opencompass) for model evaluation, performance of Mixtral will be updated soon.
 
-> This repo is an experimental implementation of inference code, which is **not officially released** by Mistral AI.
-
-
-- [Performance](#performance)
-- [Related Projects](#related-projects)
-  - [Evaluation](#evaluation)
-  - [Fine-tuning](#fine-tuning)
-  - [Deployment](#deployment)
-- [Model Architecture](#model-architecture)
-- [Prepare Model Weights](#prepare-model-weights)
-  - [Download Weights](#download-weights)
-  - [Merge Files](#merge-filesonly-for-hf)
-  - [MD5 Validation](#md5-validation)
-- [Install](#install)
-- [Inference](#inference)
-  - [Text Completion](#text-completion)
-- [Evaluation with OpenCompass](#evaluation-with-opencompass)
-  - [Step-1: Setup OpenCompass](#step-1-setup-opencompass)
-  - [Step-2: Pre-pare evaluation config and weights](#step-2-pre-pare-evaluation-config-and-weights)
-  - [Step-3: Run evaluation experiments](#step-3-run-evaluation-experiments)
-- [Acknowledgement](#acknowledgement)
+> [!Important]
+> <div align="center">
+> <b>
+> 📢 Welcome to try <a href="https://github.com/open-compass/opencompass">OpenCompass</a> for model evaluation 📢
+> </b>
+> <br>
+> <b>
+> 🤗 Request for update your mixtral-related projects is open</a>!
+> </b>
+> <br>
+> <b>
+> 🙏 This repo is an **experimental** implementation of inference code.
+> </b>
+> </div>
 
 
-# Performance
+
+
+
+# 📊 Performance
 
 ## Comparison with Other Models
 
@@ -45,8 +49,10 @@
 > Performances generated from different evaluation toolkits are different due to the prompts, settings and implementation details.
 
 
-| Datasets        | Mode | Mistral-7B-v0.1 | Mixtral-8x7B |  Llama2-70B | DeepSeek-67B-Base | Qwen-72B | 
+
+| Datasets        | Mode | Mistral-7B-v0.1 | Mixtral-8x7B(MoE) |  Llama2-70B | DeepSeek-67B-Base | Qwen-72B | 
 |-----------------|------|-----------------|--------------|-------------|-------------------|----------|
+| Active Params   |  -   |      7B         |     12B      |     70B     |       67B         |   72B    |
 | MMLU            | PPL  | 64.1            | 71.3         | 69.7        | 71.9              | 77.3     |
 | BIG-Bench-Hard  | GEN  | 56.7            | 67.1         | 64.9        | 71.7              | 63.7     |
 | GSM-8K          | GEN  | 47.5            | 65.7         | 63.4        | 66.5              | 77.6     |
@@ -88,7 +94,7 @@ mbpp                                    1e1056     score             gen     47.
 bbh                                     -          naive_average     gen     67.14
 ```
 
-# Related Projects
+# ✨ Community Projects
 
 ## Evaluation
 
@@ -103,8 +109,7 @@ bbh                                     -          naive_average     gen     67.
 
 TBD
 
-
-# Model Architecture
+# 📖 Model Architecture
 
 >  The Mixtral-8x7B-32K MoE model is mainly composed of 32 identical MoEtransformer blocks. The main difference between the MoEtransformer block and the ordinary transformer block is that the FFN layer is replaced by the **MoE FFN** layer. In the MoE FFN layer, the tensor first goes through a gate layer to calculate the scores of each expert, and then selects the top-k experts from the 8 experts based on the expert scores. The tensor is aggregated through the outputs of the top-k experts, thereby obtaining the final output of the MoE FFN layer. Each expert consists of 3 linear layers. It is worth noting that all Norm Layers of Mixtral MoE also use RMSNorm, which is the same as LLama. In the attention layer, the QKV matrix in the Mixtral MoE has a Q matrix shape of (4096,4096) and K and V matrix shapes of (4096,1024).
 
@@ -114,13 +119,18 @@ We plot the architecture as the following:
   <img src="https://github.com/open-compass/MixtralKit/assets/7881589/0bd59661-4799-4e39-8a92-95fd559679e9" width="800px"/>
 </div>
 
-# Prepare Model Weights
+# 📂 Model Weights
 
-## Download Weights
+## HuggingFace Format
+
+- [Official Base Model](https://huggingface.co/mistralai/Mistral-7B-v0.1)
+- [Official Chat Model](https://huggingface.co/mistralai/Mixtral-8x7B-Instruct-v0.1)
+
+## Raw Format
+
 You can download the checkpoints by magnet or huggingface
 
-
-### HuggingFace
+### Download via HF
 
 - [mixtral-8x7b-32kseqlen](https://huggingface.co/someone13574/mixtral-8x7b-32kseqlen)
 
@@ -132,25 +142,20 @@ You can download the checkpoints by magnet or huggingface
 git lfs install
 git clone https://huggingface.co/someone13574/mixtral-8x7b-32kseqlen
 
-```
-
-### Magnet Link
-
-Please use this link to download the original files
-```bash
-magnet:?xt=urn:btih:5546272da9065eddeb6fcd7ffddeef5b75be79a7&dn=mixtral-8x7b-32kseqlen&tr=udp%3A%2F%http://2Fopentracker.i2p.rocks%3A6969%2Fannounce&tr=http%3A%2F%http://2Ftracker.openbittorrent.com%3A80%2Fannounce
-```
-## Merge Files(Only for HF)
-
-```bash
-
+# Merge Files(Only for HF)
 cd mixtral-8x7b-32kseqlen/
 
 # Merge the checkpoints
 cat consolidated.00.pth-split0 consolidated.00.pth-split1 consolidated.00.pth-split2 consolidated.00.pth-split3 consolidated.00.pth-split4 consolidated.00.pth-split5 consolidated.00.pth-split6 consolidated.00.pth-split7 consolidated.00.pth-split8 consolidated.00.pth-split9 consolidated.00.pth-split10 > consolidated.00.pth
 ```
 
-## MD5 Validation
+### Download via Magnet Link
+
+Please use this link to download the original files
+```bash
+magnet:?xt=urn:btih:5546272da9065eddeb6fcd7ffddeef5b75be79a7&dn=mixtral-8x7b-32kseqlen&tr=udp%3A%2F%http://2Fopentracker.i2p.rocks%3A6969%2Fannounce&tr=http%3A%2F%http://2Ftracker.openbittorrent.com%3A80%2Fannounce
+```
+### MD5 Validation
 
 Please check the MD5 to make sure the files are completed.
 
@@ -175,7 +180,7 @@ Official MD5
  ╙────────────────────────────────────────────────────────────────────────────╜
 ```
 
-# Install
+# 🔨 Install
 
 ```bash
 conda create --name mixtralkit python=3.10 pytorch torchvision pytorch-cuda -c nvidia -c pytorch -y
@@ -189,7 +194,7 @@ pip install -e .
 ln -s path/to/checkpoints_folder/ ckpts
 ```
 
-# Inference
+# 🚀 Inference
 
 ## Text Completion 
 ```bash
@@ -240,7 +245,7 @@ int main()
 ```
 
 
-# Evaluation with OpenCompass
+# 🏗️ Evaluation
 
 ## Step-1: Setup OpenCompass
 
@@ -303,7 +308,19 @@ opencompass/
 HF_EVALUATE_OFFLINE=1 HF_DATASETS_OFFLINE=1 TRANSFORMERS_OFFLINE=1 python run.py playground/eval_mixtral.py
 ```
 
-# Acknowledgement
+# 🤝 Acknowledgement
+
 - [llama-mistral](https://github.com/dzhulgakov/llama-mistral)
 - [llama](https://github.com/facebookresearch/llama)
 
+# 🖊️ Citation
+
+
+```latex
+@misc{2023opencompass,
+    title={OpenCompass: A Universal Evaluation Platform for Foundation Models},
+    author={OpenCompass Contributors},
+    howpublished = {\url{https://github.com/open-compass/opencompass}},
+    year={2023}
+}
+```
