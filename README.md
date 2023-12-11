@@ -93,6 +93,14 @@ bbh                                     -          naive_average     gen     67.
 
 TBD
 
+
+# Model Architecture
+
+>  The Mixtral-8x7B-32K MoE model is mainly composed of 32 identical MoEtransformer blocks. The main difference between the MoEtransformer block and the ordinary transformer block is that the FFN layer is replaced by the **MoE FFN** layer. In the MoE FFN layer, the tensor first goes through a gate layer to calculate the scores of each expert, and then selects the top-k experts from the 8 experts based on the expert scores. The tensor is aggregated through the outputs of the top-k experts, thereby obtaining the final output of the MoE FFN layer. Each expert consists of 3 linear layers. It is worth noting that all Norm Layers of Mixtral MoE also use RMSNorm, which is the same as LLama. In the attention layer, the QKV matrix in the Mixtral MoE has a Q matrix shape of (4096,4096) and K and V matrix shapes of (4096,1024).
+
+We plot the architecture as the following:
+
+
 # Prepare Model Weights
 
 ## Download Weights
