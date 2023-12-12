@@ -94,8 +94,32 @@ bbh                                     -          naive_average     gen     67.
 ```
 # ✨ 社区项目
 
+## 博客
+- [MoE Blog from HuggingFace](https://huggingface.co/blog/moe)
+- [Enhanced MoE Parallelism, Open-source MoE Model Training Can Be 9 Times More Efficient](https://www.hpc-ai.tech/blog/enhanced-moe-parallelism-open-source-moe-model-training-can-be-9-times-more-efficient)
+
+## 论文
+
+|  题目  |   会议/期刊  |   日期   |   代码   |   示例   |
+|:--------|:--------:|:--------:|:--------:|:--------:|
+|[Mixture-of-Experts Meets Instruction Tuning:A Winning Combination for Large Language Models](https://arxiv.org/abs/2305.14705)           | Arxiv       | 23.05 | | 
+|[MegaBlocks: Efficient Sparse Training with Mixture-of-Experts](https://arxiv.org/abs/2211.15841)                                         | Arxiv       | 22.11 | [megablocks](https://github.com/stanford-futuredata/megablocks) | |
+|[ST-MoE: Designing Stable and Transferable Sparse Expert Models](https://arxiv.org/abs/2202.08906)                                        | Arxiv       | 22.02 |
+|[Switch Transformers: Scaling to Trillion Parameter Models with Simple and Efficient Sparsity](https://arxiv.org/abs/2101.03961)          | Arxiv       | 21.01 |
+|[GLaM: Efficient Scaling of Language Models with Mixture-of-Experts](https://arxiv.org/abs/2112.06905)                                    | ICML 2022   | 21.12 |
+|[GShard: Scaling Giant Models with Conditional Computation and Automatic Sharding](https://arxiv.org/abs/2006.16668)                      | Arxiv       | 20.06 |
+|[Learning Factored Representations in a Deep Mixture of Experts](https://arxiv.org/abs/1312.4314)                                         | Arxiv       | 13.12 |
+|[FasterMoE: Modeling and Optimizing Training of Large-scale Dynamic Pre-trained Models](https://dl.acm.org/doi/10.1145/3503221.3508418)   | ACM SIGPLAN | 22.03 | [FasterMoE](https://github.com/thu-pacman/FasterMoE)|
+|[Adaptive Mixture of Local Experts](https://www.cs.toronto.edu/~hinton/absps/jjnh91.pdf)                                                  | Neural Computation | 1991 |
+
 ## 评测
 - [x] 评测工具 [OpenCompass](https://github.com/open-compass/opencompass)
+
+## 训练
+- Megablocks: https://github.com/stanford-futuredata/megablocks
+- FairSeq: https://github.com/facebookresearch/fairseq/tree/main/examples/moe_lm
+- OpenMoE: https://github.com/XueFuzhao/OpenMoE
+- ColossalAI MoE: https://github.com/hpcaitech/ColossalAI/tree/main/examples/language/openmoe
 
 ## 微调
 - [x] 使用XTuner微调Mixtral-8x7B 方案(全参数/QLoRA): [XTuner](https://github.com/InternLM/xtuner/tree/main/xtuner/configs/mixtral) 
