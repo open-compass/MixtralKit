@@ -131,7 +131,7 @@ TBD
 
 # 📖 模型架构
 
-> Mixtral-8x7B-32K MoE模型主要由32个相同的MoEtransformer block组成。MoEtransformer block与普通的transformer block的最大差别在于其FFN层替换为了**MoE FFN**层。在MoE FFN层，tensor首先会经过一个gate layer计算每个expert的得分，并根据expert得分从8个expert中挑出top-k个expert，将tensor经过这top-k个expert的输出后聚合起来，从而得到MoE FFN层的最终输出，其中的每个expert由3个Linear层组成。值得注意的是，mixtral MoE的所有Norm Layer也采用了和LLama一样的RMSNorm，而在attention layer中，mixtral MoE的QKV矩阵中的Q矩阵shaoe为(4096,4096)，K和V矩阵shape则为(4096,1024)。
+> Mixtral-8x7B-32K MoE模型主要由32个相同的MoEtransformer block组成。MoEtransformer block与普通的transformer block的最大差别在于其FFN层替换为了**MoE FFN**层。在MoE FFN层，tensor首先会经过一个gate layer计算每个expert的得分，并根据expert得分从8个expert中挑出top-k个expert，将tensor经过这top-k个expert的输出后聚合起来，从而得到MoE FFN层的最终输出，其中的每个expert由3个Linear层组成。值得注意的是，mixtral MoE的所有Norm Layer也采用了和LLama一样的RMSNorm，而在attention layer中，mixtral MoE的QKV矩阵中的Q矩阵shape为(4096,4096)，K和V矩阵shape则为(4096,1024)。
 
 模型结构图如下:
 
