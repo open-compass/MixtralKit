@@ -111,7 +111,9 @@ bbh                                     -          naive_average     gen     67.
 |[GLaM: Efficient Scaling of Language Models with Mixture-of-Experts](https://arxiv.org/abs/2112.06905)                                    | ICML 2022   | 21.12 |
 |[GShard: Scaling Giant Models with Conditional Computation and Automatic Sharding](https://arxiv.org/abs/2006.16668)                      | Arxiv       | 20.06 |
 |[Learning Factored Representations in a Deep Mixture of Experts](https://arxiv.org/abs/1312.4314)                                         | Arxiv       | 13.12 |
-|[FasterMoE: Modeling and Optimizing Training of Large-scale Dynamic Pre-trained Models](https://dl.acm.org/doi/10.1145/3503221.3508418)   | ACM SIGPLAN | 22.03 | [FasterMoE](https://github.com/thu-pacman/FasterMoE)|
+|[FastMoE: A Fast Mixture-of-Expert Training System](https://arxiv.org/abs/2103.13262)   | Arxiv | 21.03 | [FastMoE](https://github.com/laekov/FastMoE)|
+|[FasterMoE: Modeling and Optimizing Training of Large-scale Dynamic Pre-trained Models](https://dl.acm.org/doi/10.1145/3503221.3508418)   | ACM SIGPLAN PPoPP 2022 | 22.03 | [FasterMoE](https://github.com/laekov/FastMoE)|
+|[SmartMoE: Efficiently Training Sparsely-Activated Models through Combining Offline and Online Parallelization](https://www.usenix.org/conference/atc23/presentation/zhai)   | USENIX ATC 2023 | 22.03 | [SmartMoE](https://github.com/zms1999/SmartMoE)|
 |[Adaptive Mixture of Local Experts](https://www.cs.toronto.edu/~hinton/absps/jjnh91.pdf)                                                  | Neural Computation | 1991 |
 
 ## Evaluation
@@ -123,6 +125,8 @@ bbh                                     -          naive_average     gen     67.
 - FairSeq: https://github.com/facebookresearch/fairseq/tree/main/examples/moe_lm
 - OpenMoE: https://github.com/XueFuzhao/OpenMoE
 - ColossalAI MoE: https://github.com/hpcaitech/ColossalAI/tree/main/examples/language/openmoe
+- FastMoE(FasterMoE): https://github.com/laekov/FastMoE
+- SmartMoE: https://github.com/zms1999/SmartMoE
 
 ## Fine-tuning
 
