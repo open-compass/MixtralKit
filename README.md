@@ -5,13 +5,13 @@
 
   A Toolkit for Mixtral Model
 
-  <a href="#📊-performance">📊Performance </a> •
-  <a href="#✨-community-projects">✨Projects </a> •
-  <a href="#📖-model-architecture">📖Architecture </a> •
-  <a href="#📂-model-weights">📂Weights </a> •
-  <a href="#🔨-install"> 🔨 Install </a> •
-  <a href="#🚀-inference">🚀Inference </a> •
-  <a href="#🤝-acknowledgement">🤝 Acknowledgement </a>
+  <a href="#-performance">📊Performance </a> •
+  <a href="#-community-projects">✨Projects </a> •
+  <a href="#-model-architecture">📖Architecture </a> •
+  <a href="#-model-weights">📂Weights </a> •
+  <a href="#-install"> 🔨 Install </a> •
+  <a href="#-inference">🚀Inference </a> •
+  <a href="#-acknowledgement">🤝 Acknowledgement </a>
 
   <br />
   <br />
