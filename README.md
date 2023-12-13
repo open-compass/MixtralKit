@@ -97,7 +97,7 @@ bbh                                     -          naive_average     gen     67.
 # ✨ Resources
 
 ## Blog
-- [MoE Blog from HuggingFace](https://huggingface.co/blog/moe)
+- [MoE Blog from Hugging Face](https://huggingface.co/blog/moe)
 - [Enhanced MoE Parallelism, Open-source MoE Model Training Can Be 9 Times More Efficient](https://www.hpc-ai.tech/blog/enhanced-moe-parallelism-open-source-moe-model-training-can-be-9-times-more-efficient)
 
 ## Papers
@@ -149,24 +149,24 @@ We plot the architecture as the following:
 
 # 📂 Model Weights
 
-## HuggingFace Format
+## Hugging Face Format
 
 - [Official Base Model](https://huggingface.co/mistralai/Mistral-7B-v0.1)
 - [Official Chat Model](https://huggingface.co/mistralai/Mixtral-8x7B-Instruct-v0.1)
 
 ## Raw Format
 
-You can download the checkpoints by magnet or huggingface
+You can download the checkpoints by magnet or Hugging Face
 
 ### Download via HF
 
 - [mixtral-8x7b-32kseqlen](https://huggingface.co/someone13574/mixtral-8x7b-32kseqlen)
 
-> If you are unable to access huggingface, please try [hf-mirror](https://hf-mirror.com/someone13574/mixtral-8x7b-32kseqlen)
+> If you are unable to access Hugging Face, please try [hf-mirror](https://hf-mirror.com/someone13574/mixtral-8x7b-32kseqlen)
 
 
 ```bash
-# Download the huggingface
+# Download the Hugging Face
 git lfs install
 git clone https://huggingface.co/someone13574/mixtral-8x7b-32kseqlen
 
