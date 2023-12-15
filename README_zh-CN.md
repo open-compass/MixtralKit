@@ -225,6 +225,10 @@ ln -s path/to/checkpoints ckpts
 ## 文本补全
 
 ```bash
+python tools/example.py -m ./ckpts -t ckpts/tokenizer.model --num-gpus 2
+```
+预期结果：
+```bash
 ==============================Example START==============================
 
 [Prompt]:
